@@ -14,7 +14,7 @@ runs:
         repository: 'mtararujs/course-js-api-framework'
         path: 'course-js-api-framework'
 
-    - name: Install depedencies
+    - name: Install dependencies
       working-directory: course-js-api-framework
       run: npm install
       shell: cmd
