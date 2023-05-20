@@ -1,6 +1,10 @@
+inputs:
+  environment:
+    description: 'Testing environment'
+    default: 'dev'
 runs:   
   using: "composite"
   steps:
     - name: Print output
-      run: echo Testing on (...) has started..
+      run: echo Testing on ${{ inputs.environment }} has started..
       shell: cmd
