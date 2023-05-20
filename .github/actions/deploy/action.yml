@@ -8,15 +8,16 @@ inputs:
 runs:   
   using: "composite"
   steps:
-    - name: Print output1
-      working-directory: python-greetings
+    - name: Print output
       run: echo Deployment to ${{ inputs.environment }} has started..
       shell: cmd
-    - name: Print output2
+
+    - name: Delete service
       working-directory: python-greetings
       run: pm2 delete greetings-app-${{ inputs.environment }} & EXIT /B 0
       shell: cmd
-    - name: Print output3
+
+    - name: Start service
       working-directory: python-greetings
       run: pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
       shell: cmd
