@@ -40,6 +40,7 @@ jobs:
         with:
           repository: 'mtararujs/course-js-api-framework'
           path: 'course-js-api-framework'
+          clean: false
       - uses: ./.github/actions/test
         with:
           environment: 'dev'
@@ -67,6 +68,7 @@ jobs:
         with:
           repository: 'mtararujs/course-js-api-framework'
           path: 'course-js-api-framework'
+          clean: false
       - uses: ./.github/actions/test
         with:
           environment: 'staging'
@@ -94,6 +96,7 @@ jobs:
         with:
           repository: 'mtararujs/course-js-api-framework'
           path: 'course-js-api-framework'
+          clean: false
       - uses: ./.github/actions/test
         with:
           environment: 'preprod'
@@ -121,6 +124,7 @@ jobs:
         with:
           repository: 'mtararujs/course-js-api-framework'
           path: 'course-js-api-framework'
+          clean: false
       - uses: ./.github/actions/test
         with:
           environment: 'prod'
