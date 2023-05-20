@@ -8,10 +8,15 @@ inputs:
 runs:   
   using: "composite"
   steps:
-    - name: Print output
+    - name: Print output1
       working-directory: python-greetings
-      run: |
-        echo Deployment to ${{ inputs.environment }} has started..
-        pm2 delete greetings-app-${{ inputs.environment }} & set "errorlevel=0"
-        pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
+      run: echo Deployment to ${{ inputs.environment }} has started..
+      shell: cmd
+    - name: Print output2
+      working-directory: python-greetings
+      run: pm2 delete greetings-app-${{ inputs.environment }} & EXIT /B 0
+      shell: cmd
+    - name: Print output3
+      working-directory: python-greetings
+      run: pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
       shell: cmd
