@@ -22,6 +22,10 @@ jobs:
     needs: [install-pip-deps]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/python-greetings'
+          path: 'python-greetings'
       - uses: ./.github/actions/deploy
         with:
           port: 7001
@@ -41,6 +45,10 @@ jobs:
     needs: [tests-on-dev]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/python-greetings'
+          path: 'python-greetings'
       - uses: ./.github/actions/deploy
         with:
           port: 7002
@@ -60,6 +68,10 @@ jobs:
     needs: [tests-on-staging]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/python-greetings'
+          path: 'python-greetings'
       - uses: ./.github/actions/deploy
         with:
           port: 7003
@@ -79,6 +91,10 @@ jobs:
     needs: [tests-on-preprod]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/python-greetings'
+          path: 'python-greetings'
       - uses: ./.github/actions/deploy
         with:
           port: 7004
