@@ -6,5 +6,9 @@ runs:
   using: "composite"
   steps:
     - name: Print output
-      run: echo Testing on ${{ inputs.environment }} has started..
+      working-directory: course-js-api-framework
+      run: |
+        echo Testing on ${{ inputs.environment }} has started..
+        npm install
+        npm run greetings greetings_${{ inputs.environment }}
       shell: cmd

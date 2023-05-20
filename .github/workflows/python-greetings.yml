@@ -36,6 +36,10 @@ jobs:
     needs: [deploy-to-dev]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/course-js-api-framework'
+          path: 'course-js-api-framework'
       - uses: ./.github/actions/test
         with:
           environment: 'dev'
@@ -59,6 +63,10 @@ jobs:
     needs: [deploy-to-staging]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/course-js-api-framework'
+          path: 'course-js-api-framework'
       - uses: ./.github/actions/test
         with:
           environment: 'staging'
@@ -82,6 +90,10 @@ jobs:
     needs: [deploy-to-preprod]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/course-js-api-framework'
+          path: 'course-js-api-framework'
       - uses: ./.github/actions/test
         with:
           environment: 'preprod'
@@ -105,6 +117,10 @@ jobs:
     needs: [deploy-to-prod]
     steps:
       - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.2
+        with:
+          repository: 'mtararujs/course-js-api-framework'
+          path: 'course-js-api-framework'
       - uses: ./.github/actions/test
         with:
           environment: 'prod'
