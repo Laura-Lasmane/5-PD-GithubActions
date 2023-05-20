@@ -1,0 +1,6 @@
+runs:   
+  using: "composite"
+  steps:
+    - name: Print output
+      run: echo Deployment to (...) has started..
+      shell: cmd

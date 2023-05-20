@@ -1,0 +1,6 @@
+runs:   
+  using: "composite"
+  steps:
+    - name: Print output
+      run: echo Installing all required dependencies..
+      shell: cmd

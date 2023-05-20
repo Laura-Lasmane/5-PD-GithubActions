@@ -1,0 +1,6 @@
+runs:   
+  using: "composite"
+  steps:
+    - name: Print output
+      run: echo Testing on (...) has started..
+      shell: cmd
