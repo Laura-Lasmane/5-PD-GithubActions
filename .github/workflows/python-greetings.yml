@@ -1,1 +1,71 @@
-# hello hello
+name: Python Greetings
+
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  install-pip-deps:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Installing all required dependencies..
+
+  deploy-to-dev:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Deployment to dev has started..
+
+  tests-on-dev:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Testing on dev has started..
+
+  deploy-to-staging:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Deployment to staging has started..
+
+  tests-on-staging:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Testing on staging has started..
+
+  deploy-to-preprod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Deployment to preprod has started..
+
+  tests-on-preprod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Testing on preprod has started..
+
+  deploy-to-prod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Deployment to prod has started..
+
+  tests-on-prod:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Print output
+        run: echo Testing on prod has started..
