@@ -2,8 +2,15 @@ runs:
   using: "composite"
   steps:
     - name: Print output
+      run: echo Installing all required dependencies..
+      shell: cmd
+
+    - uses: actions/checkout@v3.5.2
+      with:
+        repository: 'mtararujs/python-greetings'
+        path: 'python-greetings'
+
+    - name: Install dependencies
       working-directory: python-greetings
-      run: |
-        echo Installing all required dependencies..
-        pip install -r requirements.txt 
+      run: pip install -r requirements.txt 
       shell: cmd
