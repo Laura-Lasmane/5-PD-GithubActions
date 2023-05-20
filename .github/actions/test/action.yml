@@ -7,8 +7,15 @@ runs:
   steps:
     - name: Print output
       working-directory: course-js-api-framework
-      run: |
-        echo Testing on ${{ inputs.environment }} has started..
-        npm install
-        npm run greetings greetings_${{ inputs.environment }}
+      run: echo Testing on ${{ inputs.environment }} has started..
+      shell: cmd
+
+    - name: Install depedencies
+      working-directory: course-js-api-framework
+      run: npm install
+      shell: cmd
+
+    - name: Run REST API integration tests
+      working-directory: course-js-api-framework
+      run: npm run greetings greetings_${{ inputs.environment }}
       shell: cmd
